@@ -1,0 +1,39 @@
+.container{
+    display: flex;
+    justify-content: center;
+    /* width: 50%; */
+    align-items: center;
+    height: auto;
+}
+
+.container div{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+
+.back-ground{
+    background-image:url("../../../../assets/wallpaper.avif");
+    height: 100vh;
+}
+
+.container form{
+    height: 250px;
+    display: grid;
+}
+
+mat-card {
+    height:300px;
+    background-color: #b59dde87;
+    margin-bottom: 50px;
+}
+
+label{
+    font-weight: 500;
+    color:white
+}
+
+.header{
+    color:#ffd307;
+    text-align:center;
+}

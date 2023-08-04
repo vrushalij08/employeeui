@@ -1,0 +1,27 @@
+.list{
+padding:10px;
+list-style-type: none;  
+}
+
+.list li{
+    padding:8px;
+   
+    
+}
+
+.list a{
+    color:rgb(0, 0, 0);
+    font-weight: 500;
+    display: flex;
+}
+
+.list span{
+    padding-left:10px
+}
+
+.list a:active{
+    background: #f5f8fc;
+    border-radius: 4px;
+    color: #507bc4;
+}
+

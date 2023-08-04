@@ -1,0 +1,28 @@
+.container-header{
+    display:flex;
+    justify-content: space-between;
+    background-color: #0d416e;
+    height: 50px;
+}
+
+.list{
+    display:flex;
+    list-style-type: none; 
+    padding-top:2px
+}
+
+.header{
+    /* text-align: left; */
+    padding:10px;
+    color:white;
+    font-weight: 500;
+}
+
+.list li {
+    padding: 10px;
+}
+    
+
+.list li a{
+    color:#fff
+}

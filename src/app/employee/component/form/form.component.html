@@ -1,0 +1,98 @@
+
+<mat-card class="p-2">
+    <div class="d-flex justify-content-end">
+        <!-- <button  mat-dialog-close>
+            <mat-icon>close</mat-icon>
+        </button> -->
+        <button mat-icon-button mat-dialog-close color="primary">
+            <mat-icon>close</mat-icon>
+          </button>
+    </div>
+    
+    <form [formGroup]="myForm" (ngSubmit)="Submit(myForm)" class="example-form">
+       <table>
+         <tr>
+           <td>
+             <mat-form-field class="example-full-width">
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="name" placeholder="Enter Your Name" >
+             </mat-form-field>
+           </td>
+           <td>
+             <mat-form-field class="example-full-width">
+                <mat-label>Age</mat-label>
+                <input matInput formControlName="age" placeholder="Enter Your Age" >
+             </mat-form-field>
+           </td>
+         </tr>
+       <br>
+         <tr>
+            <td>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Email</mat-label>
+                    
+                    <input matInput formControlName="email" placeholder="Enter Your Email">
+                    <!-- <span *ngIf=" (myForm.controls['email'].status==='INVALID')">
+                        email required!!
+                    </span> -->
+                    <div *ngIf="formSubmitted && myForm.get('email')?.errors?.['required']">
+                      Email is required.
+                    </div>
+                    <div *ngIf="myForm.get('email')?.errors?.['email']">
+                      Invalid email format.
+                    </div>
+                </mat-form-field>
+               
+              </td>
+           <td>
+             <mat-form-field class="example-full-width">
+                <mat-label>PhoneNumber</mat-label>
+                <input matInput formControlName="phoneNo" placeholder="Enter Your PhoneNumber" >
+                <mat-error *ngIf="valid['phoneNo']?.invalid">
+                    PhoneNumber required!!
+                </mat-error>
+            </mat-form-field>
+           </td>
+         </tr>
+         <br>
+          <tr>
+           <td>
+            <mat-form-field appearance="fill">
+            <mat-label>Date Of Birth</mat-label>
+            <input formControlName="dob" matInput [matDatepicker]="picker" >
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+           </td>
+           <td>
+            <mat-form-field appearance="fill">
+                <mat-label>Education</mat-label>
+                <mat-select formControlName="education" >
+                  <mat-option value="graduation">Graduation</mat-option>
+                  <mat-option value="postgrad">Post Graduation</mat-option>
+                </mat-select>
+              </mat-form-field>
+           </td>
+         </tr> 
+         <tr>
+            <td>
+                <label>Gender</label>
+                <mat-radio-group formControlName="gender">
+                <mat-radio-button value="male">Male</mat-radio-button>
+                <mat-radio-button value="female">female</mat-radio-button>
+                </mat-radio-group>
+            </td>
+            <!-- <td>
+                <mat-checkbox formControlName="joined">Joined</mat-checkbox>
+            </td> -->
+         </tr>
+   
+       </table>
+       <div class="justify-content-end d-flex p-1">
+        <button mat-raised-button color="primary">Submit</button>
+      </div>
+   
+
+     </form> 
+   </mat-card>

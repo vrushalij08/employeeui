@@ -1,0 +1,11 @@
+.example-container{
+    height: 100vh;
+}
+
+.sidenav-con{
+    height:calc(100vh - 70px);
+}
+
+.content{
+    margin:10px;
+}

@@ -1,0 +1,22 @@
+<div class="back-ground">
+  <h4 class="header pt-4 pb-5">Welcome to management portal!!</h4>
+  <div class="container pt-4">
+    <mat-card class="p-4">
+      <form #visitorForm="ngForm" (ngSubmit)="onSubmit(visitorForm)">
+          <div d-flex >
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" [(ngModel)]="email" autocomplete="off" required>
+          </div>
+          <div class="pb-4">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" autocomplete="off" [(ngModel)]="password" required>
+          </div>
+          
+            <button class="float-right" mat-raised-button color="primary"  type="submit">Login</button>
+         
+        </form>
+    </mat-card>
+  </div>
+</div>
+
+  

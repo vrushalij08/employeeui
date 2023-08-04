@@ -1,0 +1,17 @@
+
+<app-header></app-header>
+<!-- <mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened><app-sidemenu></app-sidemenu></mat-drawer>
+    <mat-drawer-content><router-outlet></router-outlet></mat-drawer-content>
+</mat-drawer-container> -->
+<mat-sidenav-container class="sidenav-con">
+    <mat-sidenav mode="side" opened>
+      <!-- Content for the side menu goes here -->
+      <app-sidemenu></app-sidemenu>
+      
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+      <!-- Main content of your application goes here -->
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

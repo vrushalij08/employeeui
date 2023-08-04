@@ -1,0 +1,69 @@
+
+<mat-grid-list cols="2" rowHeight="1:1">
+    <mat-grid-tile>
+        <div>
+            <div>
+                <label>Total CTC:</label>
+                <span>{{this.salaryDetails?.tctc}}</span>
+            </div>
+            <div>
+                <label>In Hand:</label>
+                <span>{{this.salaryDetails?.inHandCtc}}</span>
+            </div>
+            <div>
+                <label>Bonus:</label>
+                <span>{{this.salaryDetails?.bonus}}</span>
+            </div>
+            <div>
+                <label>PF:</label>
+                <span>{{this.salaryDetails?.pf}}</span>
+            </div>
+            <div>
+                <label>Monthly:</label>
+                <span>{{this.salaryDetails?.monthlyInHand}}</span>
+            </div>
+            <form [formGroup]="skillsForm" (ngSubmit)="onSubmit()">
+ 
+                <p>
+                  <label for="name">Name </label>
+                  <input type="text" id="name" name="name" formControlName="name">
+                </p>
+               
+               
+                Skills:
+                <div formArrayName="skills">
+                  <div *ngFor="let skill of skills.controls; let i=index">
+                    <div [formGroupName]="i">
+                      {{i}}
+                      skill name :
+                      <input type="text" formControlName="skill">
+                      exp:
+                      <input type="text" formControlName="exp">
+               
+                      <button (click)="removeSkill(i)">Remove</button>
+                    </div>
+                  </div>
+                </div>
+               
+                <p>
+                  <button type="submit">Submit</button>
+                </p>
+               
+              </form>
+               
+               
+              <p>
+                <button type="button" (click)="addSkills()">Add</button>
+              </p>
+               
+              {{this.skillsForm.value | json}}
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+
+    </mat-grid-tile>
+    <!-- <mat-grid-tile>3</mat-grid-tile>
+    <mat-grid-tile>4</mat-grid-tile> -->
+</mat-grid-list>
+
+
